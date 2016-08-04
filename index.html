@@ -23,6 +23,7 @@ var nodes = []
 
 var simulation = d3.forceSimulation()
     .on('tick', ticked)
+    .velocityDecay(0)
 
 function ticked() {
     svg.selectAll('circle')

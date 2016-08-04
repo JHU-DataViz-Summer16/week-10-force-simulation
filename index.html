@@ -24,6 +24,8 @@ var nodes = []
 var simulation = d3.forceSimulation()
     .on('tick', ticked)
     .force('charge', d3.forceManyBody())
+    .force('centerX', d3.forceX(width / 2))
+    .force('centerY', d3.forceY(height / 2))
 
 function ticked() {
     svg.selectAll('circle')

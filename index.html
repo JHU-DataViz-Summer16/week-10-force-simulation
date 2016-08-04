@@ -50,6 +50,12 @@ function particle() {
         .attr('class', 'node')
         .attr('r', 4.5)
         .transition(t)
+        .on('end', function () {
+            nodes.shift()
+
+            simulation.nodes(nodes)
+            simulation.alpha(0.3).restart()
+        })
         .attr('r', 0)
         .remove()
 

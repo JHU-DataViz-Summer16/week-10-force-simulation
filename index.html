@@ -23,7 +23,6 @@ var nodes = []
 
 var simulation = d3.forceSimulation()
     .on('tick', ticked)
-    .velocityDecay(0)
 
 function ticked() {
     svg.selectAll('circle')
@@ -54,7 +53,7 @@ function particle() {
     nodes.push(node)
 
     simulation.nodes(nodes)
-    simulation.restart()
+    simulation.alpha(1).restart()
 }
 </script>
 </body>
